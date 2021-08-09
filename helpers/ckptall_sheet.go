@@ -53,7 +53,7 @@ func GetDetailKegiatan(file *excelize.File, names []string) (details []map[strin
 	// get all detail
 	for _, name := range names {
 		detail := map[string]interface{}{} // {name: adam, details: [{}]}
-		detail["nama"] = name
+		detail["code"] = name
 
 		var detailKegiatan []map[string]string
 		for i, val := range rows {
