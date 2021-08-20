@@ -16,6 +16,8 @@ const (
 	PegawaiColumnNJabatan   = 7
 	PegawaiColumnSeksiUtama = 8
 	PegawaiEndColumn        = PegawaiColumnSeksiUtama
+
+	KesepakatanTargetCell = "K5"
 )
 
 func GetDetailPegawai(file *excelize.File) (details []map[string]string) {
@@ -41,4 +43,12 @@ func GetDetailPegawai(file *excelize.File) (details []map[string]string) {
 	}
 
 	return details
+}
+
+func GetKesepakatanTarget(file *excelize.File) string {
+
+	// get all rows
+	value, _ := file.GetCellValue(PegawaiSheetName, KesepakatanTargetCell)
+
+	return value
 }

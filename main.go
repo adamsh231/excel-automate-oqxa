@@ -12,16 +12,18 @@ func main() {
 	detailPegawai := helpers.GetDetailPegawai(file)
 	detailKegiatan := helpers.GetDetailKegiatan(file, names)
 	mergeData := mergeKegiatanDanPegawai(detailPegawai, detailKegiatan)
+	kesepakatanTarget := helpers.GetKesepakatanTarget(file)
 
 	// create sheet and copy template
 	indexes := helpers.CreateSheets(file, names)
 	helpers.CopyTemplate(file, indexes)
 
 	// write all sheet
-	helpers.WriteSpecificCKPT(file, mergeData)
+	helpers.WriteSpecificCKPT(file, mergeData, kesepakatanTarget)
 
 	// save template
 	helpers.SaveAsFile(file)
+
 }
 
 func mergeKegiatanDanPegawai(pegawai []map[string]string, kegiatan []map[string]interface{}) (merged []map[string]interface{}) {

@@ -54,7 +54,7 @@ func CopyTemplate(file *excelize.File, indexes []int) {
 
 }
 
-func WriteSpecificCKPT(file *excelize.File, mergeData []map[string]interface{}) {
+func WriteSpecificCKPT(file *excelize.File, mergeData []map[string]interface{}, kesepakatanTarget string) {
 
 	// write every sheet
 	for _, data := range mergeData {
@@ -163,7 +163,7 @@ func WriteSpecificCKPT(file *excelize.File, mergeData []map[string]interface{}) 
 		// kesepakatan
 		file.SetCellValue(sheetName, fmt.Sprintf("B%d", CKPTStartWriteKegiatan+counter+2), "Kesepakatan Target")
 		file.SetCellStyle(sheetName, fmt.Sprintf("B%d", CKPTStartWriteKegiatan+counter+2), fmt.Sprintf("B%d", CKPTStartWriteKegiatan+counter+2), kesepakatan)
-		file.SetCellValue(sheetName, fmt.Sprintf("B%d", CKPTStartWriteKegiatan+counter+3), "Tanggal:")
+		file.SetCellValue(sheetName, fmt.Sprintf("B%d", CKPTStartWriteKegiatan+counter+3), kesepakatanTarget)
 
 		// pejabat dinilai
 		file.SetCellValue(sheetName, fmt.Sprintf("B%d", CKPTStartWriteKegiatan+counter+4), "Pegawai Yang Dinilai")
