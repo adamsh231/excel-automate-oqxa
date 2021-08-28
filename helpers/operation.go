@@ -85,7 +85,7 @@ func WriteSpecificCKPT(file *excelize.File, mergeData []map[string]interface{}, 
 		file.SetCellValue(sheetName, "B4", CKPTSatuanOrganisasi)
 		file.SetCellValue(sheetName, "B5", namaLengkapPegawai)
 		file.SetCellValue(sheetName, "B6", jabatanPegawai)
-		file.SetCellValue(sheetName, "B7", CKPTPeriode)
+		//file.SetCellValue(sheetName, "B7", CKPTPeriode)
 
 		// Utama
 		counter = 0
